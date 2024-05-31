@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MyMap from './components/MyMap';
+import Games from './components/Games';
+import PopC from './components/PopC';
+import WTC from './components/WTC';
+
+
 
 function App() {
+  const [selectedGame, setSelectedGame] = useState(null);
+
+  // Function to update the selected game
+  const handleGameSelect = (game) => {
+    setSelectedGame(game);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      width: "100vw",
+      height: "100vh",
+    }}>
+      <div style={{ width: "75vw", height: "100%" }}>
+        {selectedGame === 'Color World Map' && <MyMap />}
+        {selectedGame === 'Population Counter' && <PopC />}
+        {selectedGame === 'World Travelled Calculator' && <WTC />}
+      </div>
+      <div style={{ width: "25vw" }}>
+        <Games onGameSelect={handleGameSelect} />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.loc-search{
+    z-index: 1000;
+    overflow: auto;
+    font-size: 14px;
+    padding: 2px;
+    margin-left: -20px;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin-bottom: 5px;
+    max-width: max-content;
+    cursor: pointer;
+}
