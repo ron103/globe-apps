@@ -1,9 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import countries from "../data/countries.json";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import "./MyMap.css";
-import Dropdown from 'react-bootstrap/Dropdown';
 
 
 
